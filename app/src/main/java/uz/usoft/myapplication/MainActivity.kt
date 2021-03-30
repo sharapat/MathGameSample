@@ -34,11 +34,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun nextStep() {
-        val a = Random.nextInt(10, 100)
+        val c = Random.nextInt(4)
+        var a = Random.nextInt(10, 100)
         val b = Random.nextInt(10, 100)
+        if (c == 3) {
+            a = b*Random.nextInt(2, 20)
+        }
         tvFirstNumber.text = a.toString()
         tvSecondNumber.text = b.toString()
-        val c = Random.nextInt(4)
+
         tvSign.text = signs[c]
         generateAnswers(a, b, c)
     }
