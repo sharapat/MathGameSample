@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="160dp">
+
+        <TextView
+            android:id="@+id/tvFirstNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="64sp"
+            android:textColor="@color/black"
+            android:text="54"/>
+
+        <TextView
+            android:id="@+id/tvSign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="@color/black"
+            android:textSize="64sp"
+            android:layout_marginHorizontal="8dp"/>
+
+        <TextView
+            android:id="@+id/tvSecondNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="64sp"
+            android:text="1205"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonC"
+        android:layout_width="wrap_content"
+        android:onClick="onButtonClick"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="32dp"
+        android:layout_marginStart="16dp"
+        android:textSize="64sp"/>
+
+    <Button
+        android:id="@+id/buttonD"
+        android:layout_width="wrap_content"
+        android:onClick="onButtonClick"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/buttonC"
+        android:textSize="64sp"/>
+
+    <Button
+        android:id="@+id/buttonA"
+        android:textSize="64sp"
+        android:onClick="onButtonClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/buttonC"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        />
+
+    <Button
+        android:id="@+id/buttonB"
+        android:layout_width="wrap_content"
+        android:onClick="onButtonClick"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/buttonD"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/buttonC"
+        android:textSize="64sp"
+        />
+
+</RelativeLayout>
