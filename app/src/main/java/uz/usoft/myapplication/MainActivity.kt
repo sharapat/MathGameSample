@@ -54,18 +54,15 @@ class MainActivity : AppCompatActivity() {
             2 -> a*b
             else -> a/b
         }
-        var cnt = 0
-        var limit = 1
-        val answers = IntArray(4) {
-            cnt = limit
-            limit += 5
+        val set = mutableSetOf<Int>()
+        while (set.size < 4) {
             if (Random.nextBoolean()) {
-                right + Random.nextInt(cnt, cnt+5)
+                set.add(right + Random.nextInt(1, 10))
             } else {
-                right - Random.nextInt(cnt, cnt+5)
+                set.add(right - Random.nextInt(1, 10))
             }
-
         }
+        val answers = set.toMutableList()
         val rightIndex = Random.nextInt(4)
         answers[rightIndex] = right
         buttonA.text = answers[0].toString()
