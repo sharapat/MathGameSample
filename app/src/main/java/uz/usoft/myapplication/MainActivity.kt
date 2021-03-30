@@ -54,12 +54,17 @@ class MainActivity : AppCompatActivity() {
             2 -> a*b
             else -> a/b
         }
+        var cnt = 0
+        var limit = 1
         val answers = IntArray(4) {
+            cnt = limit
+            limit += 5
             if (Random.nextBoolean()) {
-                right + Random.nextInt(1, 10)
+                right + Random.nextInt(cnt, cnt+5)
             } else {
-                right - Random.nextInt(1, 10)
+                right - Random.nextInt(cnt, cnt+5)
             }
+
         }
         val rightIndex = Random.nextInt(4)
         answers[rightIndex] = right
