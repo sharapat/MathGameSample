@@ -1,6 +1,8 @@
 package uz.usoft.myapplication
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,8 +12,14 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        const val LEVEL_COUNT = 5
+    }
+
     private val signs = listOf("+", "-", "*", "/")
     private var right = 0
+    private var level = 1
+    private var correctAnswerCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,11 +34,15 @@ class MainActivity : AppCompatActivity() {
     fun onButtonClick(view: View) {
         val intent = Intent(this, GameOverActivity::class.java)
         if ((view as Button).text == right.toString()) {
-            intent.putExtra("result", "Duris")
-        } else {
-            intent.putExtra("result", "Qate")
+            correctAnswerCount++
         }
-        startActivity(intent)
+        if (level < LEVEL_COUNT) {
+            level ++
+            nextStep()
+        } else {
+            intent.putExtra("result", correctAnswerCount)
+            startActivity(intent)
+        }
     }
 
     private fun nextStep() {
